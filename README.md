@@ -11,13 +11,13 @@ Sample Handler Code
 ===================
 "main.cpp"
 
-#include <iostream>
-#include <cstring>
+//other necessary headers
 #include "qstream.h"
 
 using namespace std;
 
 int main() {
+    
     oqstream oqs = {"myfile.dat", "wb"};
     char buff[] {"Hello World"};
     oqs.write(buff, strlen(buff) * sizeof(char));
@@ -25,7 +25,7 @@ int main() {
     oqs.rewind();
     oqs.put('B').put('C');
     oqs.close();
-
+    
     iqstream iqs("myfile.dat", "rb");
     iqs.seekg(-3, SEEK_END);
     char x, y, z;
